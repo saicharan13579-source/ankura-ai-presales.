@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FBF7EF">
+<meta name="description" content="Our own AI presales team for Ankura Homes: calls every enquiry in 60 seconds, 24×7, in Telugu, Hindi, English and Marathi. Proposal by Ar. Sai Charan.">
 <title>Our own AI Presales Team — Ankura Homes</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;600;700&family=Kalam:wght@700&display=swap">
@@ -323,6 +325,106 @@ table.mini { width: 100%; border-collapse: collapse; margin-top: 8px; text-align
 @media (max-width: 760px) { #research table.sk { display: block; overflow-x: auto } }
 @media (max-width: 600px) { .ck:not(:last-child)::after { content: '↓'; right: calc(50% - 8px); top: auto; bottom: -38px } }
 @media (max-width: 900px) { .lk:not(:last-child)::after { content: '↓'; right: calc(50% - 8px); top: auto; bottom: -40px } }
+
+/* ================= RESPONSIVE LAYER: every screen, clean & clear ================= */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100% }
+img, svg, video { max-width: 100% }
+.pin { height: 100vh; height: 100svh }
+#topnav { padding-left: max(10px, env(safe-area-inset-left)); padding-right: max(10px, env(safe-area-inset-right)) }
+.wrap { padding-left: max(clamp(18px, 4vw, 40px), env(safe-area-inset-left)); padding-right: max(clamp(18px, 4vw, 40px), env(safe-area-inset-right)) }
+footer { padding-bottom: max(80px, calc(40px + env(safe-area-inset-bottom))) }
+p, li, td, h2, h3, .inshort p { overflow-wrap: break-word }
+/* small text never below ~12px */
+.fchips .chip-b small { font-size: max(12px, .55em) }
+.fmain small, .fside small, .fouts small { font-size: max(12.5px, .62em) !important }
+table.mini th { font-size: max(12px, .75em) }
+.ck small, .lk small, .obox small, .ccard small { font-size: max(13px, .85em) }
+/* tables: scroll sideways inside their card instead of spilling off small screens */
+@media (max-width: 700px) {
+  table.sk { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100% }
+  table.sk td, table.sk th { padding: 10px 10px; min-width: 96px }
+  table.sk td:first-child, table.sk th:first-child { min-width: 110px }
+  .chead { padding-top: 92px }
+  .chead h1 { font-size: clamp(34px, 10vw, 48px) }
+  .cnav .wrap { flex-direction: column } .cnav .btn { text-align: center }
+  .btn, .chip-b { min-height: 44px }   /* comfortable tap targets */
+  .dots { display: none }
+}
+/* very small phones (320–360 px) */
+@media (max-width: 360px) {
+  body { font-size: 15.5px }
+  h2 { font-size: 30px !important; line-height: 1.12 }
+  .note { padding: 18px 18px 22px }
+  .stage p.big { font-size: 24px !important } .stage h1 { font-size: 32px !important }
+}
+
+/* ----- hero, phones in portrait: text on top, story pieces below, moon out of the way ----- */
+@media (max-width: 760px) and (orientation: portrait) {
+  .stage { top: 15vh; padding: 0 16px }
+  .stage p.big { font-size: clamp(24px, 7.4vw, 34px) }
+  .stage .scr { font-size: clamp(19px, 5.4vw, 24px) }
+  .stage h1 { font-size: clamp(32px, 10vw, 46px) }
+  .moon { top: 8.5vh !important; right: 5vw !important; width: 46px !important }
+  .sun { top: 8.5vh !important }
+  .f-notif { left: 6vw; top: 47vh }
+  .f-phone { left: 8vw; top: 44vh } .f-phone .phone { width: 92px }
+  .f-bubble { left: 5vw; right: 5vw; top: 62vh } .f-bubble .bubble { font-size: 14.5px; padding: 10px 14px }
+  .f-stamp { top: 58vh } .stamp { font-size: 22px; padding: 8px 16px }
+  .timechip { font-size: 16px; padding: 4px 12px }
+}
+/* ----- hero, phones in landscape & short screens ----- */
+@media (max-height: 520px) and (orientation: landscape) {
+  .stage { top: 8vh }
+  .stage h1 { font-size: clamp(22px, 8.5vh, 44px) }
+  .stage p.big { font-size: clamp(20px, 7.5vh, 36px) }
+  .stage .scr { font-size: clamp(15px, 5vh, 24px) }
+  .stage .pill { font-size: 14px; padding: 2px 10px; margin: 3px }
+  .brand { font-size: 15px; padding: 3px 10px }
+  .timechip { font-size: 15px; padding: 3px 10px; top: 3vh }
+  .moon { top: 26vh !important; left: 3vw !important; right: auto !important; width: 42px !important }
+  .sun { top: 26vh !important; width: 42px !important }
+  .f-notif { right: 4vw; left: auto; top: 34vh } .f-notif .notif { width: min(300px, 46vw); font-size: 12.5px; padding: 8px 12px }
+  .f-phone { left: 7vw; top: 38vh } .f-phone .phone { width: 22vh } .cid { font-size: 11.5px; padding: 3px 8px }
+  .f-bubble { left: 36vw; top: 40vh } .f-bubble .bubble { font-size: 13px; padding: 8px 12px; max-width: 58vw }
+  .f-stamp { top: 50vh } .stamp { font-size: clamp(18px, 6vh, 28px); padding: 6px 14px }
+  .scrollcue { font-size: 16px }
+  .chead { padding-top: 76px }
+}
+/* ----- big screens: scale the whole reading area up so nothing looks tiny ----- */
+@media (min-width: 1800px) {
+  .chap > :not(#hero), #research, footer, #topnav { zoom: 1.2 }
+  #hero .stage > *, #hero .float > *, #hero .timechip, #hero .brand, #hero .scrollcue { zoom: 1.2 }
+}
+@media (min-width: 2400px) {
+  .chap > :not(#hero), #research, footer, #topnav { zoom: 1.45 }
+  #hero .stage > *, #hero .float > *, #hero .timechip, #hero .brand, #hero .scrollcue { zoom: 1.45 }
+}
+@media (min-width: 3400px) {
+  .chap > :not(#hero), #research, footer, #topnav { zoom: 1.9 }
+  #hero .stage > *, #hero .float > *, #hero .timechip, #hero .brand, #hero .scrollcue { zoom: 1.9 }
+}
+/* print: clean pages */
+@media print {
+  #topnav, .scrollcue, .cnav, #hero { display: none !important }
+  .chap[hidden], #research[hidden] { display: block !important }
+  .rv { opacity: 1 !important; transform: none !important }
+  .sec { padding: 24px 0; break-inside: avoid-page }
+}
+.two > * { min-width: 0 }
+/* hero fine-tuning after visual check */
+@media (max-width: 760px) and (orientation: portrait) {
+  .moon { top: 3vh !important; left: 5vw !important; right: auto !important; width: 40px !important }
+  .sun { top: 68vh !important; width: 44px !important }
+  .f-phone .phone { display: none }
+  .f-phone { top: 46vh; left: 0; right: 0 } .f-phone .cid { margin: 0 auto }
+  .f-bubble { top: 55vh }
+}
+@media (max-height: 520px) and (orientation: landscape) { .stage { padding: 0 19vw } }
+@media (min-width: 761px) and (max-width: 1300px) and (min-height: 521px) {
+  .sun { top: 30vh !important; right: 4vw !important }
+  .moon { top: 30vh !important; left: 4vw !important }
+}
+@media (max-width: 700px) { .two > * { max-width: 100% } #cost .two > div { width: 100% } }
 
 </style></head><body>
 <nav id="topnav">
@@ -1475,8 +1577,8 @@ table.mini { width: 100%; border-collapse: collapse; margin-top: 8px; text-align
   function arrows() {
     const flow = $('.flow'), svg = $('.flow-ink'); if (!flow) return;
     svg.innerHTML = ''; const W = flow.offsetWidth, H = flow.offsetHeight; svg.setAttribute('width', W); svg.setAttribute('height', H);
-    const rc = rough.svg(svg), fb = flow.getBoundingClientRect();
-    const box = (el) => { const r = el.getBoundingClientRect(); return { x: r.left - fb.left, y: r.top - fb.top, w: r.width, h: r.height }; };
+    const rc = rough.svg(svg), fb = flow.getBoundingClientRect(), k = (fb.width / (flow.offsetWidth || fb.width)) || 1;
+    const box = (el) => { const r = el.getBoundingClientRect(); return { x: (r.left - fb.left) / k, y: (r.top - fb.top) / k, w: r.width / k, h: r.height / k }; };
     const arrow = (x1, y1, x2, y2, col) => {
       const o = { stroke: col || INK, strokeWidth: 2.8, roughness: 1.3, seed: Math.round(x1 + y1) };
       svg.appendChild(rc.line(x1, y1, x2, y2, o));
@@ -1769,8 +1871,8 @@ table.mini { width: 100%; border-collapse: collapse; margin-top: 8px; text-align
     [[cost, '#8A8478', 'AI team cost / year', 'solid'], [profit, '#E8743B', 'extra profit / year', 'hachure']].forEach(([v, col, cap, fs], i) => {
       const h = Math.max(5, v / mxv * 250), x = W * (i ? .62 : .14) - bw / 2 + bw / 2 - bw / 2 + (i ? 0 : 0);
       csvg.appendChild(crc.rectangle(x, base - h, bw, h, { stroke: INK, strokeWidth: 2.4, fill: col, fillStyle: fs, hachureGap: 8, fillWeight: 2.4, roughness: 1.4, seed: 11 + i }));
-      const l = document.createElement('div'); l.className = 'lbl'; Object.assign(l.style, { left: (x - 30) + 'px', width: (bw + 60) + 'px', bottom: (Hh - base + h + 8) + 'px', fontSize: i ? '2em' : '1.6em', color: i ? '#C2551F' : INK }); l.textContent = money(v); ch.appendChild(l);
-      const c = document.createElement('div'); c.className = 'cap'; Object.assign(c.style, { left: (x - 30) + 'px', width: (bw + 60) + 'px' }); c.innerHTML = `<b>${cap}</b>`; ch.appendChild(c);
+      const l = document.createElement('div'); l.className = 'lbl'; Object.assign(l.style, { left: Math.max(0, x - 30) + 'px', width: Math.min(bw + 60, W - Math.max(0, x - 30)) + 'px', bottom: (Hh - base + h + 8) + 'px', fontSize: i ? '2em' : '1.6em', color: i ? '#C2551F' : INK }); l.textContent = money(v); ch.appendChild(l);
+      const c = document.createElement('div'); c.className = 'cap'; Object.assign(c.style, { left: Math.max(0, x - 30) + 'px', width: Math.min(bw + 60, W - Math.max(0, x - 30)) + 'px' }); c.innerHTML = `<b>${cap}</b>`; ch.appendChild(c);
     });
     const yrs = one / cost, ytxt = yrs >= 1 ? `${yrs.toFixed(1).replace(/\.0$/, '')} years` : `${Math.round(yrs * 12)} months`;
     $('.b-years').textContent = ytxt; $('.b-one').textContent = `₹${st.price} Cr × ${st.margin}% = ${money(one)}`;

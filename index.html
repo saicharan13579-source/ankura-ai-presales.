@@ -426,6 +426,34 @@ table.mini th { font-size: max(12px, .75em) }
 }
 @media (max-width: 700px) { .two > * { max-width: 100% } #cost .two > div { width: 100% } }
 
+/* ===== team chapter: lanes, why-both, role cards ===== */
+.onlyexec { margin: 28px auto 0; max-width: 820px; text-align: center; background: #D3F0DA; border: 2.5px solid #2E9E5B; border-radius: 10px; padding: 12px 18px; font-size: 1.05em }
+.lanes-head { display: grid; grid-template-columns: 130px 1fr 1fr; gap: 14px; margin-top: 30px; position: sticky; top: 56px; z-index: 3; background: rgba(240,245,250,.96); padding: 8px 0 }
+.lh { font-family: 'Kalam', cursive; font-weight: 700; font-size: 1.15em; padding: 6px 12px; border-radius: 8px }
+.lh small { display: block; font-family: 'Inter'; font-weight: 400; font-size: .7em; color: var(--muted) }
+.lh.lnph { background: #FFF0B8 } .lh.lnbs { background: #E7E0F5 }
+.lanes { display: flex; flex-direction: column; gap: 10px; margin-top: 8px }
+.lrow { display: grid; grid-template-columns: 130px 1fr 1fr; gap: 14px; align-items: stretch }
+.lt { font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.3em; color: var(--or2); padding-top: 8px; line-height: 1.1 }
+.lc { border-radius: 8px; padding: 10px 14px; font-size: .95em; line-height: 1.45 }
+.lc.lnph { background: #FFF6CF; border-left: 5px solid #E8B93B } .lc.lnph.sales { background: #FFFFFF; border-left-color: #3B78B8 }
+.lc.lnbs { background: #F1ECFA; border-left: 5px solid #8E7CC3 } .lc.lnbs.head { background: #FFE1CF; border-left-color: var(--or) }
+.lc.empty { background: transparent; border-left: 2px dashed #D6CEC0 }
+@media (max-width: 760px) {
+  .lanes-head { display: none }
+  .lrow { grid-template-columns: 1fr; gap: 6px; padding-bottom: 8px; border-bottom: 1px dashed #D6CEC0 }
+  .lc.empty { display: none }
+  .lc.lnph::before { content: '📞 on the phone · '; font-weight: 700; color: #9A7A12 }
+  .lc.lnbs::before { content: '⚙ behind the scenes · '; font-weight: 700; color: #6B57A8 }
+}
+dl.facts2 { display: grid; grid-template-columns: 112px 1fr; gap: 6px 12px; margin-top: 10px; font-size: .95em }
+dl.facts2 dt { font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.2em; color: var(--or2); line-height: 1.2 }
+dl.facts2 dd { margin: 0; line-height: 1.45 }
+@media (max-width: 420px) { dl.facts2 { grid-template-columns: 1fr; gap: 0 } dl.facts2 dd { margin-bottom: 8px } }
+.without { margin-top: 12px; font-size: .9em; padding: 8px 12px; background: rgba(255,255,255,.6); border-radius: 6px; border: 1.5px dashed #C2551F }
+.rcd { position: relative; padding: 20px 22px 22px }
+.rcd h3 { margin-top: 2px }
+
 </style></head><body>
 <nav id="topnav">
   <a class="b" href="#top">Ankura · AI Presales</a>
@@ -891,7 +919,7 @@ table.mini th { font-size: max(12px, .75em) }
  <div class="wrap">
   <p class="cnum2">chapter 5 of 8 <span class="dots"><a href="#ch1" class="dot" title="The problem"></a><a href="#ch2" class="dot" title="Meet Priya"></a><a href="#ch3" class="dot" title="Always on, from our own number"></a><a href="#ch4" class="dot" title="Finds the right project"></a><a href="#ch5" class="dot on" title="The AI team"></a><a href="#ch6" class="dot" title="How it works"></a><a href="#ch7" class="dot" title="Cost & profit"></a><a href="#ch8" class="dot" title="Build plan & pilot"></a></span></p>
   <h1>👥 The AI team</h1>
-  <div class="inshort"><span class="scr">in short</span><p>An AI CEO, an AI manager and 6 AI presales executives. Every call is tracked; weekly and monthly reports reach our Sales Head, whose instructions become tasks for the team.</p></div>
+  <div class="inshort"><span class="scr">in short</span><p>6 AI executives talk to buyers directly. Behind the scenes, Meera (manager) assigns every lead, checks every call and chases waiting buyers; Aditya (CEO) briefs our Sales Head every week and turns his instructions into tasks.</p></div>
  </div>
 </header>
 <!-- ================= TEAM: ORG CHART ================= -->
@@ -918,36 +946,64 @@ table.mini th { font-size: max(12px, .75em) }
     <div class="oarrow rv">live hand-off of warm buyers ↓</div>
     <div class="orow"><div class="obox human rv" data-r="box" data-fill="#FFFFFF" data-fs="solid"><span class="otag">humans · Ankura</span><b>Project sales persons</b><small>KONAK · THE WOODS · UTF · EDGE … site visits &amp; closing</small></div></div>
   </div>
-  <p class="muted rv" style="margin-top:26px;max-width:820px">“Team CEO” is the head of the AI presales team, not Ankura’s CEO. It can set priorities and follow-ups, but never changes prices, offers or promises; real decisions stay with our Sales Head.</p>
+  <div class="onlyexec rv"><b>Only the executives ever talk to buyers.</b> Meera and Aditya work behind the scenes: they are never between the buyer and the call, and they never slow it down.</div>
+  <p class="muted rv" style="margin-top:18px;max-width:820px">“Team CEO” is the head of the AI presales team, not Ankura’s CEO. It can set priorities and follow-ups, but never changes prices, offers or promises; real decisions stay with our Sales Head.</p>
  </div>
 </section>
 
-<!-- ================= TEAM: ROLES ================= -->
-<section class="sec" id="roles" style="background:rgba(207,229,246,.25)">
+<!-- ================= TEAM: ONE BUYER, START TO FINISH ================= -->
+<section class="sec" id="journey" style="background:rgba(207,229,246,.25)">
  <div class="wrap">
-  <span class="kick rv">clear roles, no confusion</span>
-  <h2 class="rv">Who does what</h2>
-  <div class="grid g2 roles" style="margin-top:36px">
-    <div class="note pk rv" style="--rot:-1deg"><p class="otag">AI · Team CEO</p><h3>Aditya</h3><ul class="tl"><li>Reads the manager’s weekly &amp; monthly reports</li><li>Sends the Sales Head a one-page brief: wins, problems, decisions needed</li><li>Turns the Sales Head’s instructions into clear tasks for the whole team</li><li>Checks every task gets done, and says so in the next brief</li></ul></div>
-    <div class="note y rv" style="--rot:1deg;--d:.1s"><p class="otag">AI · Presales Manager</p><h3>Meera</h3><ul class="tl"><li>Gives every new lead to the right executive: language, project, workload</li><li>A returning buyer always gets the same executive</li><li>Reviews every call: tone, missed follow-ups, hot buyers waiting on sales</li><li>Weekly report every Monday, monthly report on the 1st, to the CEO</li></ul></div>
-    <div class="note bl rv" style="--rot:-.6deg;--d:.2s"><p class="otag">AI · Presales executives ×6</p><h3>Priya, Kavya, Ananya, Rahul, Sneha, Karthik</h3><ul class="tl"><li>Call every lead in 60 seconds, in the buyer’s language</li><li>Ask the needs, match the best project, explain why it fits</li><li>WhatsApp brochure &amp; location, book site visits</li><li>Hand warm buyers live to the project’s sales person, with a brief</li></ul></div>
-    <div class="note gr rv" style="--rot:.8deg;--d:.3s"><p class="otag">humans · Ankura</p><h3>Sales Head &amp; project sales persons</h3><ul class="tl"><li><b>Sales Head:</b> reads the CEO’s brief, replies with instructions</li><li><b>Sales persons:</b> take hand-offs, run site visits, close</li><li>Mark the result in the sheet: visited, booked, lost</li><li>That closes the loop, so nothing is lost between AI and sales</li></ul></div>
+  <span class="kick rv">one buyer, start to finish</span>
+  <h2 class="rv">What the buyer sees, and what happens behind the scenes</h2>
+  <div class="lanes-head rv"><span></span><span class="lh lnph">📞 on the phone <small>what the buyer sees</small></span><span class="lh lnbs">⚙ behind the scenes <small>the buyer never sees</small></span></div>
+  <div class="lanes">
+    <div class="lrow rv"><span class="lt">Sat 11:30 PM</span><div class="lc lnph">Ravi fills the KONAK form on Instagram and ticks “call me now”.</div><div class="lc lnbs empty"></div></div>
+    <div class="lrow rv"><span class="lt">+ 0.1 sec</span><div class="lc lnph empty"></div><div class="lc lnbs"><b>Meera</b> picks the executive: Telugu speaker, knows KONAK, free right now → <b>Kavya</b>.</div></div>
+    <div class="lrow rv"><span class="lt">11:31 PM</span><div class="lc lnph"><b>Kavya</b> calls from Ankura’s KONAK line (83 6767 0505), in Telugu.</div><div class="lc lnbs">Call recorded and written down live.</div></div>
+    <div class="lrow rv"><span class="lt">11:33 PM</span><div class="lc lnph">Kavya asks his needs, suggests KONAK, explains why it fits, and WhatsApps the brochure and location.</div><div class="lc lnbs">Needs saved: 5 BHK · ~₹5 Cr · east-facing · family of 4.</div></div>
+    <div class="lrow rv"><span class="lt">11:36 PM</span><div class="lc lnph">Site visit booked: Sunday 11 AM.</div><div class="lc lnbs"><b>Meera</b> checks the call: summary, “hot”, tone OK → Google Sheet + dashboard.</div></div>
+    <div class="lrow rv"><span class="lt">Sun 9:30 AM</span><div class="lc lnph empty"></div><div class="lc lnbs"><b>Meera’s morning check:</b> KONAK’s sales person gets Ravi’s brief on WhatsApp. Any hot buyer waiting 24 h+ gets chased the same way.</div></div>
+    <div class="lrow rv"><span class="lt">Sun 11:00 AM</span><div class="lc lnph sales">Ravi’s family meets KONAK’s <b>sales person</b> at the site.</div><div class="lc lnbs">Sales person marks “visited” in the sheet.</div></div>
+    <div class="lrow rv"><span class="lt">Mon 9:00 AM</span><div class="lc lnph empty"></div><div class="lc lnbs"><b>Meera → Aditya:</b> weekly team report, every executive, every number.</div></div>
+    <div class="lrow rv"><span class="lt">Mon 10:00 AM</span><div class="lc lnph empty"></div><div class="lc lnbs"><b>Aditya → Sales Head:</b> one-page brief on WhatsApp: wins, problems, decisions needed.</div></div>
+    <div class="lrow rv"><span class="lt">Mon 10:15 AM</span><div class="lc lnph empty"></div><div class="lc lnbs head"><b>Sales Head:</b> “Push KONAK this week.” → <b>Aditya</b> turns it into tasks for Meera and the executives, within minutes.</div></div>
+    <div class="lrow rv"><span class="lt">rest of the week</span><div class="lc lnph">Executives offer KONAK first where it fits; warm KONAK buyers get a call back.</div><div class="lc lnbs"><b>Meera</b> tracks it; next Monday’s brief shows the result.</div></div>
   </div>
  </div>
 </section>
 
-<!-- ================= TEAM: CLIENT → SALES FLOW ================= -->
-<section class="sec" id="handflow">
+<!-- ================= TEAM: WHY BOTH ================= -->
+<section class="sec" id="whyboth">
  <div class="wrap">
-  <span class="kick rv">from client to sales person</span>
-  <h2 class="rv">One smooth hand-off chain</h2>
-  <div class="chain" style="margin-top:40px">
-    <div class="ck rv" data-r="box" data-fill="#FFF3C4" data-fs="solid"><span class="cn">1</span><b>Client enquires</b><small>website · ads · portals · calls</small></div>
-    <div class="ck rv" style="--d:.08s" data-r="box" data-fill="#FFE07A" data-fs="solid"><span class="cn">2</span><b>Meera assigns</b><small>“Telugu, KONAK → Kavya”</small></div>
-    <div class="ck rv" style="--d:.16s" data-r="box" data-fill="#CFE5F6" data-fs="solid"><span class="cn">3</span><b>Kavya calls</b><small>needs → best project → WhatsApp</small></div>
-    <div class="ck rv" style="--d:.24s" data-r="box" data-fill="#D3F0DA" data-fs="solid"><span class="cn">4</span><b>Warm? hand-off</b><small>live to KONAK’s sales person + brief</small></div>
-    <div class="ck rv" style="--d:.32s" data-r="box" data-fill="#FFFFFF" data-fs="solid"><span class="cn">5</span><b>Sales person</b><small>site visit · closing · updates sheet</small></div>
-    <div class="ck rv" style="--d:.4s" data-r="box" data-fill="#FFD2C8" data-fs="solid"><span class="cn">6</span><b>Meera follows up</b><small>“hot buyer, no visit in 48 h?” → nudge</small></div>
+  <span class="kick rv">why we need both</span>
+  <h2 class="rv">Meera runs the day. Aditya runs the direction.</h2>
+  <p class="muted rv" style="max-width:820px;margin-top:8px">Like a site in our own work: the site engineer is there every minute; the project head looks at the whole picture and talks to management. Different jobs, both needed.</p>
+  <div class="grid g2" style="margin-top:30px">
+    <div class="note y rv" style="--rot:-.8deg"><p class="otag">AI · Presales Manager</p><h3>Meera: the site engineer</h3>
+      <dl class="facts2"><dt>looks at</dt><dd>every lead and every call</dd><dt>how often</dt><dd>every minute, plus a 9:30 AM daily check</dd><dt>faces</dt><dd>the executives and our sales persons</dd><dt>output</dt><dd>the right executive on each call, call reviews, nudges, weekly &amp; monthly reports</dd></dl>
+      <p class="without">Without Meera: nobody picks the right executive, checks calls, or chases hot buyers waiting on sales.</p></div>
+    <div class="note pk rv" style="--rot:.8deg;--d:.1s"><p class="otag">AI · Team CEO</p><h3>Aditya: the project head</h3>
+      <dl class="facts2"><dt>looks at</dt><dd>the whole team, week by week</dd><dt>how often</dt><dd>Monday 10 AM, the 1st of the month, and whenever the Sales Head writes</dd><dt>faces</dt><dd>our Sales Head</dd><dt>output</dt><dd>a one-page brief, decisions needed, and tasks from the Sales Head’s instructions</dd></dl>
+      <p class="without">Without Aditya: the Sales Head reads raw reports, and his instructions need someone to turn them into work.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- ================= TEAM: ROLES IN DETAIL ================= -->
+<section class="sec" id="roles" style="background:rgba(255,224,122,.12)">
+ <div class="wrap">
+  <span class="kick rv">every role, in detail</span>
+  <h2 class="rv">Who does what</h2>
+  <div class="grid g2 rolecards" style="margin-top:30px">
+    <div class="rcd rv" data-r="box" data-fill="#DDE9F6" data-fs="solid"><p class="otag">AI · 6 presales executives</p><h3>Priya, Kavya, Ananya, Rahul, Sneha, Karthik</h3>
+      <dl class="facts2"><dt>talks to</dt><dd>buyers, directly: makes and takes every call</dd><dt>when</dt><dd>24×7 inbound; outbound 9 AM–9 PM buyer time, or anytime the buyer asks</dd><dt>does</dt><dd>calls in 60 s · asks needs · matches the project and says why · WhatsApps brochure &amp; location · books visits · hands warm buyers to sales live</dd><dt>tracks</dt><dd>every call: summary, hot/warm/cold, project, next step</dd><dt>reports to</dt><dd>Meera</dd><dt>never</dt><dd>offers discounts, promises beyond the project sheet, or pretends to be human</dd></dl></div>
+    <div class="rcd rv" style="--d:.08s" data-r="box" data-fill="#FFF0B8" data-fs="solid"><p class="otag">AI · Presales Manager</p><h3>Meera</h3>
+      <dl class="facts2"><dt>talks to</dt><dd>no buyers; works behind the scenes</dd><dt>when</dt><dd>every new lead (instantly), every finished call, 9:30 AM daily, Monday 9 AM, the 1st</dd><dt>does</dt><dd>assigns each lead (language, project, workload; returning buyer → same executive) · reviews every call · chases hot buyers waiting 24 h+ · writes the weekly &amp; monthly report</dd><dt>tracks</dt><dd>each executive’s calls, connects, hot leads, visits, WhatsApps, hand-offs, tone</dd><dt>reports to</dt><dd>Aditya</dd><dt>never</dt><dd>sits between a buyer and a call</dd></dl></div>
+    <div class="rcd rv" style="--d:.16s" data-r="box" data-fill="#FFE1CF" data-fs="solid"><p class="otag">AI · Team CEO</p><h3>Aditya</h3>
+      <dl class="facts2"><dt>talks to</dt><dd>our Sales Head only</dd><dt>when</dt><dd>Monday 10 AM, the 1st at 10 AM, and within minutes of any Sales Head message</dd><dt>does</dt><dd>turns Meera’s report into a one-page brief · lists decisions needed · turns instructions into tasks (priorities, call-back lists, routing) · checks tasks get done</dd><dt>tracks</dt><dd>team results, open tasks, what changed since last week</dd><dt>reports to</dt><dd>the Sales Head</dd><dt>never</dt><dd>changes prices, offers or rules; real decisions stay with the Sales Head</dd></dl></div>
+    <div class="rcd rv" style="--d:.24s" data-r="box" data-fill="#FFFFFF" data-fs="solid"><p class="otag" style="color:#3B78B8">humans · Ankura</p><h3>Sales Head &amp; project sales persons</h3>
+      <dl class="facts2"><dt>Sales Head</dt><dd>reads Aditya’s brief, replies with instructions on WhatsApp or the dashboard, makes the real decisions</dd><dt>sales persons</dt><dd>take live hand-offs and morning briefs, run site visits, close the sale</dd><dt>they track</dt><dd>“visited / booked / lost” in the same Google Sheet</dd><dt>why it matters</dt><dd>that closes the loop: nothing is lost between AI and sales</dd></dl></div>
   </div>
  </div>
 </section>
@@ -1457,7 +1513,7 @@ table.mini th { font-size: max(12px, .75em) }
        <li><b>NRI buyers:</b> time zone from phone number, callbacks at their chosen local time, video walkthrough booking</li>
        <li><b>Behaviour:</b> patient presales persona, gentle check-ins on silence, AI “tone check” after every call</li>
        <li><b>Tracking:</b> live dashboard, full transcripts, AI summary and hot/warm/cold score, Google Sheets</li>
-       <li><b>Tested:</b> 34 automated tests pass; a simulated call runs end to end. Real phone calls need our accounts and keys, which is the pilot’s first step.</li>
+       <li><b>Tested:</b> 35 automated tests pass; a simulated call runs end to end. Real phone calls need our accounts and keys, which is the pilot’s first step.</li>
       </ul>
      </div>
     </details>
